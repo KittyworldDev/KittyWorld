@@ -61,10 +61,8 @@ nav.nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 110px;
+    gap: 60px; /* Уменьшил с 110px — теперь помещается лучше */
     flex-wrap: wrap;
-    left: -2%; 
-    margin-left: -2%;
 }
 
 /* Стили верхних кнопок */
@@ -147,12 +145,13 @@ nav.nav {
 }
 
 .online-players .players-count {
-    font-weight: normal;       /* Число — обычный шрифт */
+    font-weight: normal;
 }
 
 .online-players .players-text {
-    font-weight: normal;          /* "котиков онлайн" — полужирный */
+    font-weight: normal;
 }
+
 /* Заголовок "Полезное:" */
 .useful-links-title {
     text-align: center;
@@ -200,7 +199,7 @@ nav.nav {
 .tg-icon, .server-icon {
     width: 28px;
     height: 28px;
-    fill: currentColor; /* Белый обычно, синий при наведении */
+    fill: currentColor;
 }
 
 /* IP-кнопка — в ряд как остальные */
@@ -209,7 +208,7 @@ nav.nav {
     flex-direction: row;
 }
 
-/* Адаптивность */
+/* Адаптивность для нижних кнопок */
 @media (max-width: 768px) {
     .links-buttons {
         flex-direction: column;
@@ -225,6 +224,30 @@ nav.nav {
     .tg-icon, .server-icon {
         width: 26px;
         height: 26px;
+    }
+}
+
+/* === ИСПРАВЛЕНИЕ ДЛЯ ВЕРХНЕЙ НАВИГАЦИИ НА МОБИЛЬНЫХ === */
+@media (max-width: 768px) {
+    nav.nav {
+        gap: 30px; /* Ещё меньше отступ на телефонах */
+        padding: 0 20px; /* Добавил боковые отступы, чтобы не прилипало к краям */
+    }
+
+    .button {
+        font-size: 16px; /* Чуть уменьшил шрифт */
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav.nav {
+        gap: 20px;
+    }
+
+    .button {
+        font-size: 15px;
+        padding: 8px 16px;
     }
 }
 
@@ -300,7 +323,7 @@ body.wiki-page::before {
     font-weight: 600;
     text-decoration: none;
     transition: color 0.3s ease;
-    padding-left: 20px; /* Отступ для подкатегорий */
+    padding-left: 20px;
 }
 
 .nav-link:hover, .sub-link:hover {
@@ -328,7 +351,7 @@ body.wiki-page::before {
     padding: 20px;
 }
 
-/* Адаптивность */
+/* Адаптивность wiki */
 @media (max-width: 768px) {
     .wiki-wrapper {
         flex-direction: column;
