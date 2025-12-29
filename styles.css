@@ -49,9 +49,30 @@ body:not(.wiki-page)::before {
 }
 
 header { width: 100%; text-align: center; margin-bottom: 20px; }
-nav.nav { display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap; }
-.button { padding: 12px 24px; text-decoration: none; color: gray; background-color: transparent; border: none; border-radius: 8px; font-size: 18px; font-weight: 600; cursor: pointer; transition: color 0.3s ease; white-space: nowrap; }
-.button:hover, .button.active { color: white; }
+nav.nav { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 60px; 
+    flex-wrap: wrap; 
+}
+
+.button { 
+    padding: 12px 24px; 
+    text-decoration: none; 
+    color: gray; 
+    background-color: transparent; 
+    border: none; 
+    border-radius: 8px; 
+    font-size: 18px; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: color 0.3s ease; 
+    white-space: nowrap; 
+}
+.button:hover, .button.active { 
+    color: white; 
+}
 
 .logo { text-align: center; margin-top: 15vh; }
 .logo img { max-width: 90%; width: 600px; height: auto; filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.9)); image-rendering: pixel-art; }
@@ -236,13 +257,13 @@ nav.nav { display: flex; justify-content: center; align-items: center; gap: 60px
     flex-direction: column;
     box-sizing: border-box;
     position: relative;
-    overflow: visible; /* Ключевое: скин не обрезается! */
+    overflow: visible;
 }
 
 .dev-top-skins {
     position: absolute;
-    top: -20px;    /* Твоя настройка для десктопа */
-    left: 10px;    /* Твоя настройка */
+    top: -20px;
+    left: 10px;
 }
 
 .dev-small-skin {
@@ -256,7 +277,7 @@ nav.nav { display: flex; justify-content: center; align-items: center; gap: 60px
 .dev-divider {
     height: 1px;
     background-color: #444444;
-    margin: 40px 0 20px 0; /* Твоя настройка — линия высоко */
+    margin: 40px 0 20px 0;
 }
 
 .dev-main-text {
@@ -285,6 +306,21 @@ nav.nav { display: flex; justify-content: center; align-items: center; gap: 60px
 }
 
 @media (max-width: 768px) {
+    /* Фикс навигационных кнопок на телефоне */
+    nav.nav {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .button {
+        font-size: 20px;
+        padding: 16px 32px;
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+
     .guide-cards-row {
         flex-direction: column;
         align-items: center;
@@ -321,7 +357,7 @@ nav.nav { display: flex; justify-content: center; align-items: center; gap: 60px
     .guide-title { font-size: 32px; }
     .guide-subtitle { font-size: 18px; }
 
-    /* Адаптив для Стены Разработчиков — теперь красиво на телефоне */
+    /* Адаптив для Стены Разработчиков */
     .dev-cards-row {
         flex-direction: column;
         align-items: center;
@@ -336,8 +372,8 @@ nav.nav { display: flex; justify-content: center; align-items: center; gap: 60px
     }
 
     .dev-top-skins {
-        top: -15px;   /* На телефоне меньше вылезает вверх */
-        left: 15px;   /* Сдвинут правее — не уходит за левый край экрана */
+        top: -15px;
+        left: 15px;
     }
 
     .dev-small-skin {
@@ -346,7 +382,7 @@ nav.nav { display: flex; justify-content: center; align-items: center; gap: 60px
     }
 
     .dev-divider {
-        margin: 50px 0 20px 0; /* Линия остаётся высоко, как ты хотел */
+        margin: 50px 0 20px 0;
     }
 
     .dev-main-text {
@@ -368,26 +404,6 @@ nav.nav { display: flex; justify-content: center; align-items: center; gap: 60px
     }
 }
 
-/* ====================== WIKI СТИЛИ ====================== */
-.wiki-wrapper { display: flex; max-width: 1200px; width: 90%; margin: 60px auto; gap: 60px; }
-.back-button { position: absolute; top: 20px; left: 5%; padding: 10px 20px; background-color: #140F0B; color: white; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; }
-.back-button:hover { background-color: #202020; color: #42AAFF; }
-.wiki-nav-list { width: 300px; flex-shrink: 0; }
-.wiki-nav-list ul { list-style: none; padding: 0; margin: 0; }
-.wiki-nav-list li { margin-bottom: 8px; }
-.category { color: gray; font-size: 20px; font-weight: 600; padding: 15px 0 5px 0; cursor: default; }
-.nav-link, .sub-link { display: block; padding: 8px 0; color: white; font-size: 18px; font-weight: 600; text-decoration: none; transition: color 0.3s ease; padding-left: 20px; }
-.nav-link:hover, .sub-link:hover { color: #FFD1DC; }
-.nav-link.active, .sub-link.active { color: #FFD1DC; }
-.wiki-content { flex: 1; padding: 20px; font-size: 18px; color: #e0e0e0; line-height: 1.6; min-height: 70vh; background-color: #111; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
-#content-area { padding: 20px; }
-
-@media (max-width: 768px) {
-    .wiki-wrapper { flex-direction: column; }
-    .back-button { position: static; margin-bottom: 20px; text-align: center; display: block; width: fit-content; margin-left: auto; margin-right: auto; }
-    .wiki-nav-list { width: 100%; }
-    .sub-link, .nav-link { font-size: 17px; padding-left: 10px; }
-}
 /* ====================== ФУТЕР ====================== */
 
 .footer {
@@ -429,4 +445,25 @@ nav.nav { display: flex; justify-content: center; align-items: center; gap: 60px
     .agreement-link {
         font-size: 13px;
     }
+}
+
+/* ====================== WIKI СТИЛИ ====================== */
+.wiki-wrapper { display: flex; max-width: 1200px; width: 90%; margin: 60px auto; gap: 60px; }
+.back-button { position: absolute; top: 20px; left: 5%; padding: 10px 20px; background-color: #140F0B; color: white; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; }
+.back-button:hover { background-color: #202020; color: #42AAFF; }
+.wiki-nav-list { width: 300px; flex-shrink: 0; }
+.wiki-nav-list ul { list-style: none; padding: 0; margin: 0; }
+.wiki-nav-list li { margin-bottom: 8px; }
+.category { color: gray; font-size: 20px; font-weight: 600; padding: 15px 0 5px 0; cursor: default; }
+.nav-link, .sub-link { display: block; padding: 8px 0; color: white; font-size: 18px; font-weight: 600; text-decoration: none; transition: color 0.3s ease; padding-left: 20px; }
+.nav-link:hover, .sub-link:hover { color: #FFD1DC; }
+.nav-link.active, .sub-link.active { color: #FFD1DC; }
+.wiki-content { flex: 1; padding: 20px; font-size: 18px; color: #e0e0e0; line-height: 1.6; min-height: 70vh; background-color: #111; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+#content-area { padding: 20px; }
+
+@media (max-width: 768px) {
+    .wiki-wrapper { flex-direction: column; }
+    .back-button { position: static; margin-bottom: 20px; text-align: center; display: block; width: fit-content; margin-left: auto; margin-right: auto; }
+    .wiki-nav-list { width: 100%; }
+    .sub-link, .nav-link { font-size: 17px; padding-left: 10px; }
 }
