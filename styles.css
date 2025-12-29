@@ -306,24 +306,18 @@ nav.nav {
 }
 
 @media (max-width: 768px) {
-    /* Навигационные кнопки на телефоне — слева направо (горизонтально) */
+    /* Кнопки навигации на телефоне — помещаются в одну строку */
     nav.nav {
-        gap: 20px;
-        padding: 0 20px;
-        overflow-x: auto; /* Прокрутка, если не помещаются */
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch; /* Плавная прокрутка на iOS */
-    }
-
-    nav.nav::-webkit-scrollbar {
-        display: none; /* Скрываем скроллбар */
+        gap: 15px; /* Меньше расстояние между кнопками */
+        padding: 0 10px;
+        flex-wrap: nowrap; /* Не переносим на новую строку */
+        justify-content: center;
     }
 
     .button {
-        font-size: 18px;
-        padding: 14px 24px;
-        min-width: 100px;
-        display: inline-block;
+        font-size: 16px; /* Чуть меньше шрифт */
+        padding: 10px 16px; /* Меньше отступы внутри */
+        min-width: auto;
     }
 
     .guide-cards-row {
