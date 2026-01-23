@@ -1,5 +1,7 @@
 User-agent: *
+Disallow: /root/
+Disallow: /admin/
+
 Allow: /
 
-# В будущем добну sitemap.xml
 # Sitemap: https://kittyworld.zapto.org/sitemap.xml
