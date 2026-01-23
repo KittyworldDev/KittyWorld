@@ -1,7 +1,0 @@
-User-agent: *
-Disallow: /root/
-Disallow: /admin/
-
-Allow: /
-
-# Sitemap: https://kittyworld.zapto.org/sitemap.xml
