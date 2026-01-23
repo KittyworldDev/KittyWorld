@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Если в будущем добавите sitemap.xml
+# Sitemap: https://kittyworld.zapto.org/sitemap.xml
