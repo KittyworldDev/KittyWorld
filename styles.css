@@ -1946,3 +1946,243 @@ body {
     overflow: visible !important; /* Обеспечиваем видимость тултипов */
 }
 
+/* ====================== НОВЫЙ ФУТЕР ====================== */
+
+.footer {
+    margin-top: 40px;
+    width: 100%;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Левая колонка - Контакты */
+.contacts-column {
+    align-items: flex-start;
+}
+
+.contacts-column p {
+    font-size: 14px;
+    color: #888888;
+    margin: 0; /* Убрали отступы */
+    line-height: 1.4;
+    text-align: left;
+    min-height: 20px; /* Фиксированная высота строки */
+}
+
+.contacts-column a {
+    color: #FFD1DC;
+    text-decoration: none;
+}
+
+.contacts-column a:hover {
+    text-decoration: underline;
+}
+
+/* Центральная колонка - Копирайт */
+.center-column {
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.copyright {
+    font-size: 14px;
+    color: #888888;
+    margin: 0 0 8px 0; /* Только нижний отступ */
+    min-height: 20px; /* Фиксированная высота */
+}
+
+.agreement-link {
+    font-size: 14px;
+    color: #888888;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: color 0.3s ease;
+    min-height: 20px; /* Фиксированная высота */
+}
+
+.agreement-link:hover {
+    color: white;
+}
+
+/* Правая колонка - Пожертвования */
+.donations-column {
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.donations-list-link, .donate-button {
+    display: block;
+    font-size: 14px;
+    color: #888888;
+    text-decoration: none;
+    margin: 0; /* Убрали отступы */
+    padding: 0; /* Убрали padding */
+    transition: color 0.3s ease;
+    background-color: transparent !important;
+    text-align: right;
+    min-height: 20px; /* Фиксированная высота */
+}
+
+.donations-list-link:hover, .donate-button:hover {
+    color: white;
+    background-color: transparent !important;
+}
+
+/* Специфично для десктопной версии */
+@media (min-width: 769px) {
+    /* Устанавливаем одинаковую высоту для ВСЕХ элементов в колонках */
+    .contacts-column p,
+    .copyright,
+    .agreement-link,
+    .donations-list-link,
+    .donate-button {
+        height: 20px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+    
+    /* Создаем "строки" */
+    .contacts-row-1 {
+        order: 1;
+    }
+    
+    .contacts-row-2 {
+        order: 2;
+    }
+    
+    .contacts-row-3 {
+        order: 3;
+    }
+    
+    .contacts-row-4 {
+        order: 4;
+    }
+    
+    /* Выравниваем всё по одной линии */
+    .footer-container {
+        align-items: center; /* Центрируем по вертикали */
+    }
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 0 20px;
+    }
+    
+    .footer-column {
+        width: 100%;
+        padding: 0;
+        align-items: center !important;
+    }
+    
+    /* Порядок на мобильных: 1) Пожертвования, 2) Контакты, 3) Копирайт */
+    .donations-column {
+        order: 1;
+    }
+    
+    .contacts-column {
+        order: 2;
+    }
+    
+    .center-column {
+        order: 3;
+    }
+    
+    .contacts-column p {
+        text-align: center;
+        min-height: auto;
+        margin: 3px 0;
+    }
+    
+    .donations-list-link, .donate-button {
+        text-align: center;
+        min-height: auto;
+        margin: 3px 0;
+    }
+}
+
+/* ====================== СКРЫТЫЙ ТЕЛЕФОН ====================== */
+
+.hidden-phone {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* На мобильных показываем только строку с телефоном для сохранения структуры */
+@media (max-width: 768px) {
+    .contacts-row-3.hidden-phone {
+        display: block !important;
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 3px 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        color: transparent;
+        font-size: 0;
+        line-height: 0;
+    }
+    
+    .contacts-row-3.hidden-phone::before {
+        content: "Телефон: (скрыто)";
+        font-size: 14px;
+        color: #888888;
+        line-height: 1.4;
+    }
+}
+
+/* ====================== ПОДНЯТИЕ КОЛОНОК НА ДЕСКТОПЕ ====================== */
+
+@media (min-width: 769px) {
+    .center-column {
+        transform: translateY(-2px);
+    }
+    
+    .donations-column {
+        transform: translateY(-10px);
+    }
+}
+
+/* На мобильных оставляем как есть */
+@media (max-width: 768px) {
+    .center-column, .donations-column {
+        transform: none;
+    }
+}

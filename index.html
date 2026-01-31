@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <meta name="description" content="Официальный сайт Minecraft-сервера KittyWorld — уютный портал для котиков-игроков! 😼🐾">
-    <meta name="keywords" content="Minecraft, Server, KittyWorld, Survival, Roleplay, Cats, Community">
-    <link rel="canonical" href="https://kittyworld.zapto.org/">
     <title>KittyWorld</title>
+    <meta name="description" content="Официальный сайт сервера KittyWorld в Minecraft. Уютный RP-сервер для ролевых игр, выживания, строительства. Присоединяйтесь к нашему комьюнити с котиками! Подробные правила, гайды, ссылки на подключение.">
+    <meta name="keywords" content="Minecraft сервер, KittyWorld, RP сервер, ролевая игра, выживание, кланы, котики, подключиться к серверу, Minecraft, Survival, Roleplay, Community, Cats">
+    <meta name="author" content="KittyWorld">
+    
+    <!-- Open Graph для социальных сетей -->
+    <meta property="og:title" content="KittyWorld - RP сервер Minecraft с котиками">
+    <meta property="og:description" content="Присоединяйся к уютному RP-серверу KittyWorld в Minecraft! Ролевые игры, выживание, строительство и котики ждут тебя.">
+    <meta property="og:image" content="https://kittyworld.ru/images/logo.png">
+    <meta property="og:url" content="https://kittyworld.ru/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="KittyWorld">
+    <meta property="og:locale" content="ru_RU">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KittyWorld - RP сервер Minecraft с котиками">
+    <meta name="twitter:description" content="Уютный RP-сервер KittyWorld в Minecraft. Присоединяйся к комьюнити с ролевыми играми и котиками!">
+    <meta name="twitter:image" content="https://kittyworld.ru/images/logo.png">
+    <meta name="twitter:site" content="@KittyWorld">
+    
+    <link rel="canonical" href="https://kittyworld.ru/">
+    
+    <!-- Favicon в разных форматах -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -138,11 +165,28 @@
 
         <!-- Футер -->
         <footer class="footer">
-            <p class="copyright">© 2026 KittyWorld</p>
-            <a href="user-agreement.pdf" class="agreement-link" target="_blank">Пользовательское соглашение</a>
-        </footer>
+            <div class="footer-container">
+                <!-- Левая колонка - Контакты -->
+                <div class="footer-column contacts-column">
+                    <p class="contacts-row-1">Почта: KittyWorld@proton.me</p>
+                    <p class="contacts-row-2">Телеграм: <a href="https://t.me/LyricaZazy" target="_blank">@MrTosya69</a></p>
+                    <p class="contacts-row-3 hidden-phone">Телефон: +7 (82151) 3-37-02</p>
+                    <p class="contacts-row-4">GitHub: <a href="https://github.com/KittyworldDev/KittyWorld" target="_blank">KittyWorld</a></p>
+                </div>
 
-    </div>
+                <!-- Центральная колонка - Копирайт -->
+                <div class="footer-column center-column">
+                    <p class="copyright">© 2026 KittyWorld</p>
+                    <a href="user-agreement.pdf" class="agreement-link" target="_blank">Пользовательское соглашение</a>
+                </div>
+
+                <!-- Правая колонка - Пожертвования -->
+                <div class="footer-column donations-column">
+                    <a href="https://t.me/KittyWorldDonate" class="donations-list-link" target="_blank">Список Пожертвований</a>
+                    <a href="https://t.me/send?start=IVA8n4JOX1hj" class="donate-button" target="_blank">Пожертвовать</a>
+                </div>
+            </div>
+        </footer>
 
     <!-- Toast-уведомление снизу экрана -->
     <div class="toast-feedback" id="copyFeedback">Скопировано!</div>
