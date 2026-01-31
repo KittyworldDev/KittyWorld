@@ -2186,3 +2186,28 @@ body {
         transform: none;
     }
 }
+
+.contact-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    vertical-align: middle;
+    stroke: currentColor;     /* берёт цвет от родителя */
+    flex-shrink: 0;
+    transition: stroke 0.3s ease;
+}
+
+/* Hover — делаем ярче/розовее в стиле сайта */
+.contacts-column p:hover .contact-icon,
+.donations-column a:hover .contact-icon {
+    stroke: #FFD1DC;          /* hot pink из твоей темы */
+}
+
+/* Мобильные — чуть компактнее */
+@media (max-width: 768px) {
+    .contact-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+    }
+}
