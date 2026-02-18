@@ -296,14 +296,6 @@ nav.nav {
     margin-top: 40px;
 }
 
-/* Адаптив для карточек на разрешениях <=1280px */
-@media (max-width: 1280px) {
-    .guide-cards-row {
-        transform: scale(0.85);
-        transform-origin: center top; /* Уменьшаем размер без смещения */
-    }
-}
-
 /* ====================== СТЕНА РАЗРАБОТЧИКОВ ====================== */
 
 .dev-wall-title {
